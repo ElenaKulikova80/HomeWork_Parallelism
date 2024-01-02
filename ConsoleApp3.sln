@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parallelism", "Parallelism.csproj", "{5D25ADFD-F0C9-48A1-A6D2-37831FE153B7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D25ADFD-F0C9-48A1-A6D2-37831FE153B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D25ADFD-F0C9-48A1-A6D2-37831FE153B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D25ADFD-F0C9-48A1-A6D2-37831FE153B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D25ADFD-F0C9-48A1-A6D2-37831FE153B7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {08F9E319-788A-486B-8D36-4E41783383FA}
+	EndGlobalSection
+EndGlobal
