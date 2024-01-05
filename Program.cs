@@ -7,17 +7,11 @@ using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
 using System.Diagnostics;
 
-
 public class Parallelism
 {
-    public static void Main(string[] args)
+    static int ParallelReadFiles(string folderPath)
     {
         int totalNumberSpaces = 0;
-        string folderPath = @"C:\Users\123\source\repos\ReadFiles\";
-        Stopwatch stopWatch = new Stopwatch();
-        //TimeSpan ts = stopWatch.Elapsed;
-        stopWatch.Start();
-
         String[] files = Directory.GetFiles(folderPath);
         Parallel.For(0, files.Length,
                      index => {
@@ -25,8 +19,19 @@ public class Parallelism
                          int numberSpace = GetFileWhitespaceCount(fi.ToString(), ' ');
                          Interlocked.Add(ref totalNumberSpaces, numberSpace);
                      });
+        return totalNumberSpaces;
+    }
+    public static void Main(string[] args)
+    {
+        
+        string folderPath = @"C:\Users\123\source\repos\ReadFiles\";
+        Stopwatch stopWatch = new Stopwatch();
+
+        stopWatch.Start();
+        int resultTotalNumberSpaces = ParallelReadFiles(folderPath);
         stopWatch.Stop();
-        Console.WriteLine("Количество пробелов в файлах в папке {0} равно {1}", folderPath, totalNumberSpaces);
+
+        Console.WriteLine("Количество пробелов в файлах в папке {0} равно {1}", folderPath, resultTotalNumberSpaces);
         Console.WriteLine("Время выполнения = {0}, мс", stopWatch.ElapsedMilliseconds);
     }
     static int GetFileWhitespaceCount(string path, char ch)
@@ -34,4 +39,5 @@ public class Parallelism
         return File.ReadAllText(path).Count(c => c == ch);
     }
 }
+
 
